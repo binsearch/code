@@ -1,0 +1,6 @@
+#include <iostream>
+using namespace std;
+int main(){
+	int no_of_t;
+	cin >> no_of_t;
+}
