@@ -1,10 +1,11 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 int exp(int x,int pow,int mod){
 	
 	x = x % mod;
 	if(pow == 0){
-		return 1;
+		return 1%mod;
 	}
 
 	else if(pow%2 == 0){
@@ -18,29 +19,12 @@ int exp(int x,int pow,int mod){
 	}
 }
 
-int eqPairs(int x1, int x2, int x3){
-	int no;
-	no = 0;
-	if(x1 == x2){
-		no++;
-	}
-	if(x2 == x3){
-		no++;
-	}
 
-	if(x3 == x1){
-		no++;
-	}
-
-	return no;
-}
 
 int main(){
-
 	int no_of_t;
 	cin >> no_of_t;
 	for(int i = 0; i < no_of_t; i++){
-
 		int upper;
 		cin >> upper;
 		int d;
@@ -49,44 +33,36 @@ int main(){
 		cin >> m;
 		int n;
 		cin >> n;
-		long long int count = 0;
-		long long int subcount = 0;
-		int rem = upper%n;
-		int quo = upper/n;
+		vector<long long int> group;
+		group.assign(n,upper/n);
+		for(int j = 0; j <= upper%n; j++){
+			group[j]++;
+		}
+
+		vector<long long int> exGroup;
+		exGroup.assign(n,0);
 		for(int j = 0; j < n; j++){
-			int temp1 = exp(j,d,n);
-			for(int k = 0; k <= j; k++){
-				int temp2 = exp(k,d,n);
-				for(int l = 0; l <= k; l++){
-					int temp3 = exp(l,d,n);
-					if((temp1+temp2+temp3)%n == m){
-						int comb = eqPairs(j,k,l);
-						if(comb == 0){	
-							count = count + 6;
-						}
+			exGroup[exp(j,d,n)]+= group[j];
+		}
 
-						if(comb == 1){
-							count = count + 3;
-						}
-
-						if(comb == 3){
-							count++;
-						}
+		long long int count;
+		count = 0;
+		for(int j = 0; j < n; j++){
+			for(int k = 0; k < n; k++){
+				for(int l = 0; l < n; l++){
+					if((j+k+l)%n == m){
+						long long int temp;
+						temp = (exGroup[j]*exGroup[k])%	1000000007;
+						temp = (temp * exGroup[l])%1000000007;
+						count = (count + temp)%1000000007; 				
 					}
 				}
 			}
 
-			if(rem == j){
-				subcount = count;
-			}
-
-
 		}
 
-		long long int fcount;
-		fcount  = ((count)*quo)%1000000007; 
-		fcount = (fcount + subcount)%1000000007;
-		cout << fcount << endl;
+		
+		cout << count << endl;
 	}
 	return 0;
 
