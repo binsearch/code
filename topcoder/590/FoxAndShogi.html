@@ -1,0 +1,53 @@
+<html><body bgcolor="#000000" text="#ffffff"><table><tr><td colspan="2"><h3>Problem Statement</h3></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td>Fox Ciel is going to play Shogi with her friend Jiro.
+Before they start, Jiro showed her a puzzle with some pawns on the board.<br></br>
+<br></br>
+<br></br>
+You are given a vector &lt;string&gt; <b>board</b> that describes Jiro's board.
+Character j of element i of <b>board</b> represents the cell (i,j) of the board:
+'U' is a cell with a pawn that may move upwards, 'D' a cell with a pawn that may move downwards, and '.' is an empty cell.<br></br>
+<br></br>
+<br></br>
+Jiro showed Ciel this board and gave her the following question:
+You are allowed to make as many valid moves as you wish, including zero.
+In each move you may either take a 'U' pawn and move it one cell upwards, or take a 'D' pawn and move it one cell downwards.
+Of course, both types of moves are only valid if the destination cell is currently empty.<br></br>
+Pawns are not allowed to move out of bounds.<br></br>
+How many different configurations can you create?<br></br>
+<br></br>
+<br></br>
+Return the number of different configurations that are reachable from the one described by <b>board</b>, modulo 1,000,000,007.</td></tr><tr><td colspan="2"><h3>Definition</h3></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td>Class:</td><td>FoxAndShogi</td></tr><tr><td>Method:</td><td>differentOutcomes</td></tr><tr><td>Parameters:</td><td>vector &lt;string&gt;</td></tr><tr><td>Returns:</td><td>int</td></tr><tr><td>Method signature:</td><td>int differentOutcomes(vector &lt;string&gt; board)</td></tr><tr><td colspan="2">(be sure your method is public)</td></tr></table></td></tr><tr><td>&#160;&#160;&#160;&#160;</td></tr><tr><td></td></tr><tr><td colspan="2"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top">-</td><td>n will be between 2 and 50, inclusive.</td></tr><tr><td align="center" valign="top">-</td><td><b>board</b> will contain exactly n elements.</td></tr><tr><td align="center" valign="top">-</td><td>Each element in <b>board</b> will contain exactly n characters.</td></tr><tr><td align="center" valign="top">-</td><td>Each character in <b>board</b> will be one of 'U', 'D' or '.'.</td></tr><tr><td colspan="2"><h3>Examples</h3></td></tr><tr><td align="center" nowrap="true">0)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{&quot;.D.&quot;,
+ &quot;...&quot;,
+ &quot;...&quot;}
+ </pre></td></tr></table></td></tr><tr><td><pre>Returns: 3</pre></td></tr><tr><td><table><tr><td colspan="2">Ciel can move the pawn 0, 1, or 2 steps downwards.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">1)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{&quot;.D.&quot;,
+ &quot;...&quot;,
+ &quot;.U.&quot;}
+ </pre></td></tr></table></td></tr><tr><td><pre>Returns: 3</pre></td></tr><tr><td><table><tr><td colspan="2">There are three different outcomes: Either we do not move any of the pawns, or we move the top one downwards, or the bottom one upwards.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">2)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{&quot;DDDDD&quot;,
+ &quot;.....&quot;,
+ &quot;.....&quot;,
+ &quot;.....&quot;,
+ &quot;.....&quot;}
+</pre></td></tr></table></td></tr><tr><td><pre>Returns: 3125</pre></td></tr><tr><td><table><tr><td colspan="2">The answer is 5^5. Note that we are only counting each configuration once, even if there are multiple ways of reaching it.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">3)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{&quot;DDDDD&quot;,
+ &quot;U....&quot;,
+ &quot;.U...&quot;,
+ &quot;..U..&quot;,
+ &quot;...U.&quot;}
+</pre></td></tr></table></td></tr><tr><td><pre>Returns: 900</pre></td></tr><tr><td><table><tr><td colspan="2"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">4)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{&quot;....D..&quot;,
+ &quot;U....D.&quot;,
+ &quot;D.D.U.D&quot;,
+ &quot;U.U...D&quot;,
+ &quot;....U..&quot;,
+ &quot;D.U...D&quot;,
+ &quot;U.U....&quot;}
+</pre></td></tr></table></td></tr><tr><td><pre>Returns: 2268</pre></td></tr><tr><td><table><tr><td colspan="2"></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">5)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{&quot;DDDDDDDDDD&quot;,
+ &quot;..........&quot;,
+ &quot;..........&quot;,
+ &quot;..........&quot;,
+ &quot;..........&quot;,
+ &quot;..........&quot;,
+ &quot;..........&quot;,
+ &quot;..........&quot;,
+ &quot;..........&quot;,
+ &quot;..........&quot;}
+</pre></td></tr></table></td></tr><tr><td><pre>Returns: 999999937</pre></td></tr><tr><td><table><tr><td colspan="2">The answer is 10^10 mod 1,000,000,007.
+</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">6)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>{&quot;..&quot;,
+ &quot;..&quot;}</pre></td></tr></table></td></tr><tr><td><pre>Returns: 1</pre></td></tr><tr><td><table><tr><td colspan="2"></td></tr></table></td></tr></table></td></tr></table><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2003, TopCoder, Inc.  All rights reserved.  </p></body></html>
