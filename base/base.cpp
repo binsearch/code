@@ -17,6 +17,7 @@
 #include <cstdlib>
 #include <ctime>
 #include <cstring>
+#include <queue>
 typedef long long int lli;
 using namespace std;
 inline void inp(int &n ) {//fast input function
@@ -31,5 +32,5 @@ inline void inp(int &n ) {//fast input function
 int main(){
 
 
-return 0;	
+	return 0;	
 }
