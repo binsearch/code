@@ -1,85 +1,64 @@
 /*
 USER: zobayer
-TASK: SHPATH
-ALGO: dijkstra
+TASK: LIS2
+ALGO: binary search
 */
 
-#include <cstdio>
-#include <map>
-#include <vector>
-#include <string>
-#include <queue>
+#include <ios>
+#include <set>
 using namespace std;
 
-#define MAX 10001
-#define INF 1000000000
-#define pii pair<int,int>
-#define psi pair<string,int>
+typedef pair< int, int > pii;
 
-map< string, int > M;
-map< string, int > :: iterator it;
-vector< pii > G[MAX];
-int d[MAX], f[MAX];
+const int MAX = 100001;
+set< pii > S[MAX];
 
-int main()
-{
-int t, n, e, i, j, q, start, end, v, w, wi, vi, ui, sz;
-char city[20];
-scanf("%d", &t);
-while(t--)
-{
+bool comp(set< pii > &s, pii &p) {
+set< pii >::iterator it;
+for(it=s.begin(); it!=s.end(); it++) {
+if(it->first < p.first && it->second < p.second) return true;
+if(it->first >= p.first) return false;
+}
+return false;
+}
+
+int find_pos(int start, int end, pii val) {
+int cnt = end - start, idx, stp;
+while(cnt > 0) {
+idx = start, stp = cnt>>1, idx += stp;
+if(comp(S[idx], val)) start = ++idx, cnt -= ++stp;
+else cnt = stp;
+}
+return start;
+}
+
+int main() {
+int x, y, n, pos, i, cnt;
+pii p;
+set< pii >::iterator it, pr;
 scanf("%d", &n);
-for(i=1; i<=n; i++)
-{
-scanf("%s%d", city, &e);
-M.insert(psi(city, i));
-for(j=1; j<=e; j++)
-{
-scanf("%d%d", &v, &w);
-G[i].push_back(pii(w, v));
+for(i=0; i<n; i++) {
+scanf("%d%d", &x, &y);
+p = pii(x, y);
+pos = find_pos(0, n, p);
+if(pos < n) {
+S[pos].insert(p);
+it = S[pos].find(p);
+it++;
+while(it!=S[pos].end()) {
+if(it->first > p.first && it->second > p.second) {
+pr = ++it; --it;
+S[pos].erase(it);
+it = pr;
+}
+else it++;
 }
 }
-scanf("%d", &q);
-for(i=0; i<q; i++)
-{
-scanf("%s", city);
-it = M.find(city);
-start = (*it).second;
-scanf("%s", city);
-it = M.find(city);
-end = (*it).second;
-priority_queue< pii, vector< pii >, greater< pii > > Q;
-Q.push(pii(0, start));
-for(j=1; j<=n; j++)
-{
-d[j] = INF;
-f[j] = 0;
 }
-d[start] = 0;
-while(!Q.empty())
-{
-ui = Q.top().second;
-wi = Q.top().first;
-Q.pop();
-if(f[ui]) continue;
-sz = G[ui].size();
-for(j=0; j<sz; j++)
-{
-vi = G[ui][j].second;
-w = G[ui][j].first;
-if(!f[vi] && d[ui] + w < d[vi])
-{
-d[vi] = d[ui] + w;
-Q.push(pii(d[vi], vi));
+for(i=cnt=0; i<n; i++) {
+if(S[i].empty()) break;
+else cnt++;
 }
-}
-f[ui] = 1;
-if(ui == end) break;
-}
-printf("%d\n", d[end]);
-}
-for(i=1; i<=n; i++) G[i].clear();
-M.clear();
-}
+printf("%d\n", cnt);
 return 0;
 }

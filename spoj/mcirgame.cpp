@@ -17,12 +17,10 @@
 #include <cstdlib>
 #include <ctime>
 #include <cstring>
-typedef long long int lli;
-#define mod 1000000007
+#include <queue>
 using namespace std;
-lli gcd (lli a, lli b) {
-    return (b == 0) ? a : gcd (b, a%b);
-}
+typedef long long int lli;
+typedef pair<int,int> pii;
 inline void inp(int &n ) {//fast input function
 	n=0;
 	int ch=getchar_unlocked(),sign=1;
@@ -32,31 +30,35 @@ inline void inp(int &n ) {//fast input function
 	n=n*sign;
 }
 
-int main(){
+lli dp[160];
+lli recurse(int n){
+	
+	if(dp[n] != -1) return dp[n];
 
-	int t;
-	inp(t);
-	for(int i = 0; i < t; i++){
-		lli n;
+	lli tot = 0;
+	for(int i = 0; i < n; i++){
+		tot+= recurse(i)*recurse(n-1-i);
+	}
+	dp[n] = tot;
+	return tot;
+
+}
+
+int main(){
+	
+	while(1){
+		int n;
 		inp(n);
-		lli count = 0;
-		lli j = 1;
-		while(j <= n){
-			lli temp;
-			temp = n/j;
-			count = count+(lli)(n/temp + 1 - j)*(lli)temp;
-			count = count % mod;
-			j = n/temp + 1;
+		if(n == -1){
+			break;
 		}
-		cout << count << endl;
-		lli tot;
-		tot = (lli)n*(lli)n;
-		lli g = gcd(tot,count);
-		tot = tot/g;
-		count = count/g;
-		cout << count << "/" << tot << endl;
+		memset(dp, -1, sizeof dp);
+		dp[0] = 1;
+		dp[1] = 1;
+		printf("%lld\n",recurse(n));
 
 	}
 
-	return 0;
+
+	return 0;	
 }

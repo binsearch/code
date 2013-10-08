@@ -18,8 +18,9 @@
 #include <ctime>
 #include <cstring>
 #include <queue>
-typedef long long int lli;
 using namespace std;
+typedef long long int lli;
+typedef pair<int,int> pii;
 inline void inp(int &n ) {//fast input function
 	n=0;
 	int ch=getchar_unlocked(),sign=1;

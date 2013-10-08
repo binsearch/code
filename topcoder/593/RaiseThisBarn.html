@@ -1,0 +1,20 @@
+<html><body bgcolor="#000000" text="#ffffff"><table><tr><td colspan="2"><h3>Problem Statement</h3></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td>The pony Applejack is going to raise a new barn.
+The barn will consist of N sections in a row.
+Some of the sections will be empty, others will contain a single cow each.
+You are given a string <b>str</b> with N characters.
+This string describes the desired layout of the barn:
+the character 'c' represents a section with a cow, and the character '.' represents an empty section.<br></br><br></br>
+
+After she raises the barn, Applejack will build a wall that will divide the barn into two separate parts:
+one containing the first k sections and the other containing the last N-k sections, for some integer k.
+Each part must contain at least one section. (I.e., k must be between 1 and N-1, inclusive.)
+Additionally, Applejack wants both parts to contain exactly the same number of cows.<br></br><br></br>
+
+Return the number of possible positions for the wall.
+In other words, return the number of choices for the integer k such that all the conditions above are satisfied.</td></tr><tr><td colspan="2"><h3>Definition</h3></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td>Class:</td><td>RaiseThisBarn</td></tr><tr><td>Method:</td><td>calc</td></tr><tr><td>Parameters:</td><td>string</td></tr><tr><td>Returns:</td><td>int</td></tr><tr><td>Method signature:</td><td>int calc(string str)</td></tr><tr><td colspan="2">(be sure your method is public)</td></tr></table></td></tr><tr><td>&#160;&#160;&#160;&#160;</td></tr><tr><td></td></tr><tr><td colspan="2"><h3>Constraints</h3></td></tr><tr><td align="center" valign="top">-</td><td><b>str</b> will contain between 2 and 50 characters, inclusive.</td></tr><tr><td align="center" valign="top">-</td><td>Each character in <b>str</b> will be 'c' or '.'.</td></tr><tr><td colspan="2"><h3>Examples</h3></td></tr><tr><td align="center" nowrap="true">0)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>&quot;cc..c.c&quot;</pre></td></tr></table></td></tr><tr><td><pre>Returns: 3</pre></td></tr><tr><td><table><tr><td colspan="2">Applejack can choose k=2, k=3, or k=4.
+The three corresponding solutions are shown below, with '|' representing the wall between the two parts.
+<pre>
+cc|..c.c
+cc.|.c.c
+cc..|c.c
+</pre></td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">1)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>&quot;c....c....c&quot;</pre></td></tr></table></td></tr><tr><td><pre>Returns: 0</pre></td></tr><tr><td><table><tr><td colspan="2">There is an odd number of cows. It is impossible to divide them into two equal halves.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">2)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>&quot;............&quot;</pre></td></tr></table></td></tr><tr><td><pre>Returns: 11</pre></td></tr><tr><td><table><tr><td colspan="2">This is a barn with 12 empty sections. It can be divided in 11 different ways: into 1+11 sections, 2+10 sections, ..., or 11+1 sections.</td></tr></table></td></tr></table></td></tr><tr><td align="center" nowrap="true">3)</td><td></td></tr><tr><td>&#160;&#160;&#160;&#160;</td><td><table><tr><td><table><tr><td><pre>&quot;.c.c...c..ccc.c..c.c.cc..ccc&quot;</pre></td></tr></table></td></tr><tr><td><pre>Returns: 3</pre></td></tr><tr><td><table><tr><td colspan="2"></td></tr></table></td></tr></table></td></tr></table><p>This problem statement is the exclusive and proprietary property of TopCoder, Inc.  Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited.  (c)2003, TopCoder, Inc.  All rights reserved.  </p></body></html>

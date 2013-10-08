@@ -17,12 +17,9 @@
 #include <cstdlib>
 #include <ctime>
 #include <cstring>
+#include <queue>
 typedef long long int lli;
-#define mod 1000000007
 using namespace std;
-lli gcd (lli a, lli b) {
-    return (b == 0) ? a : gcd (b, a%b);
-}
 inline void inp(int &n ) {//fast input function
 	n=0;
 	int ch=getchar_unlocked(),sign=1;
@@ -31,32 +28,31 @@ inline void inp(int &n ) {//fast input function
 	n=(n<<3)+(n<<1)+ ch-'0', ch=getchar_unlocked();
 	n=n*sign;
 }
-
+int dp[2][31];
+int recurse(int type, int n){
+	if(dp[type][n] != -1)
+		return dp[type][n];
+	if(type == 0){
+		dp[0][n] = recurse(0,n-2)+2*recurse(1,n-2); 
+		return dp[0][n;]
+	}
+	dp[1][n] = recurse(0,n)+recurse(1,n-2); 
+	return dp[1][n];
+}
 int main(){
 
-	int t;
-	inp(t);
-	for(int i = 0; i < t; i++){
-		lli n;
+	while(1){
+		int n;
 		inp(n);
-		lli count = 0;
-		lli j = 1;
-		while(j <= n){
-			lli temp;
-			temp = n/j;
-			count = count+(lli)(n/temp + 1 - j)*(lli)temp;
-			count = count % mod;
-			j = n/temp + 1;
-		}
-		cout << count << endl;
-		lli tot;
-		tot = (lli)n*(lli)n;
-		lli g = gcd(tot,count);
-		tot = tot/g;
-		count = count/g;
-		cout << count << "/" << tot << endl;
+		if( n == -1) break;
+		memset(dp,-1,sizeof dp);
+		dp[0][0] = 1;
+		dp[0][1] = 0;
+		dp[1][1] = 0;
+		dp[1][0] = 1;
+		printf("%d\n", recurse(0,n));
 
 	}
 
-	return 0;
+	return 0;	
 }

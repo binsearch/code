@@ -17,12 +17,11 @@
 #include <cstdlib>
 #include <ctime>
 #include <cstring>
-typedef long long int lli;
+#include <queue>
 #define mod 1000000007
 using namespace std;
-lli gcd (lli a, lli b) {
-    return (b == 0) ? a : gcd (b, a%b);
-}
+typedef long long int lli;
+typedef pair<int,int> pii;
 inline void inp(int &n ) {//fast input function
 	n=0;
 	int ch=getchar_unlocked(),sign=1;
@@ -31,32 +30,39 @@ inline void inp(int &n ) {//fast input function
 	n=(n<<3)+(n<<1)+ ch-'0', ch=getchar_unlocked();
 	n=n*sign;
 }
+map<pii,lli> m1;
+lli recurse(int n, int m){
+	// cout << n << " " << m << endl;
+	if(n < 0){
+		return 0;
+	}
+	if(n == 0){
+		return 1;
+	}
+	if(m == 1){
+		return 1;
+	}
+	if(m1.find(pii(n,m))!=m1.end())
+		return m1[pii(n,m)];
 
+	lli ans;
+	ans = recurse(n,m-1) + recurse(n-m,m);
+	ans = ans%mod;
+	m1[pii(n,m)]=ans;
+	return ans;
+
+}
+
+int A[90001][10001];
 int main(){
 
-	int t;
-	inp(t);
-	for(int i = 0; i < t; i++){
-		lli n;
-		inp(n);
-		lli count = 0;
-		lli j = 1;
-		while(j <= n){
-			lli temp;
-			temp = n/j;
-			count = count+(lli)(n/temp + 1 - j)*(lli)temp;
-			count = count % mod;
-			j = n/temp + 1;
+	// lli ans = recurse(90000,10000);
+	cout << ans << endl;
+
+	for(lli i=1;i<90001;i++) {
+		for(lli j=i;j<10001;j++) {
+			A[i][j]=1;
 		}
-		cout << count << endl;
-		lli tot;
-		tot = (lli)n*(lli)n;
-		lli g = gcd(tot,count);
-		tot = tot/g;
-		count = count/g;
-		cout << count << "/" << tot << endl;
-
 	}
-
-	return 0;
+	return 0;	
 }

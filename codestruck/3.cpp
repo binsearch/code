@@ -17,12 +17,11 @@
 #include <cstdlib>
 #include <ctime>
 #include <cstring>
-typedef long long int lli;
-#define mod 1000000007
+#include <queue>
 using namespace std;
-lli gcd (lli a, lli b) {
-    return (b == 0) ? a : gcd (b, a%b);
-}
+typedef long long int lli;
+typedef pair<int,int> pii;
+lli mod = 1000000007;
 inline void inp(int &n ) {//fast input function
 	n=0;
 	int ch=getchar_unlocked(),sign=1;
@@ -32,31 +31,28 @@ inline void inp(int &n ) {//fast input function
 	n=n*sign;
 }
 
+const lli in = 1e15;
+double in1 = 1e15;
+
 int main(){
 
-	int t;
-	inp(t);
-	for(int i = 0; i < t; i++){
-		lli n;
-		inp(n);
-		lli count = 0;
-		lli j = 1;
-		while(j <= n){
-			lli temp;
-			temp = n/j;
-			count = count+(lli)(n/temp + 1 - j)*(lli)temp;
-			count = count % mod;
-			j = n/temp + 1;
-		}
-		cout << count << endl;
-		lli tot;
-		tot = (lli)n*(lli)n;
-		lli g = gcd(tot,count);
-		tot = tot/g;
-		count = count/g;
-		cout << count << "/" << tot << endl;
-
+	lli cnt = 0;lli k=sqrt(in1);
+	cout<<k<<" "<<k*k<<endl;
+	k++;
+	lli sum;
+	cout<<k<<" "<<k*k<<endl;
+	for(lli i = 1; i < sqrt(in1); i++){
+		cnt+= in/i - i;
+		sum=in/i-i;
+		if(sum<=1)
+			cout<<i<<endl;
+		cnt = cnt % mod;
+		k=i;
 	}
-
-	return 0;
+	cout<<k<<endl;
+	cnt = (cnt*2)%mod;
+	cnt+=  sqrt(in1);
+	cnt = cnt % mod;
+	cout << cnt << endl;
+	return 0;	
 }
