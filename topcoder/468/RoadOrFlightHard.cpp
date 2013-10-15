@@ -23,9 +23,9 @@ typedef long long int lli;
 class RoadOrFlightHard
         {
         public:
-        lli r[100000],f[100000],A[100001][41],B[100001][41];
+        lli r[400001],f[400001],A[2][41],B[2][41];
         long long minTime(int n, int rf, int rp, int ra, int rm, int ff, int fp, int fa, int fm, int k)
-            {
+        {
             //$CARETPOSITION$
             	r[0]=rf%rm;
             	f[0]=ff%fm;
@@ -33,22 +33,28 @@ class RoadOrFlightHard
             	for(int i=1;i<n;i++) {
             		r[i]=((r[i-1]*(lli)rp)+(lli)ra)%(lli)rm;
             		f[i]=((f[i-1]*(lli)fp)+(lli)fa)%(lli)fm;
-            	}
+            	}  
 
-            	for(int i=0;i<=k;i++) {
-            		A[1][i]=r[0];
-            		B[1][i]=f[0];
-            	}
-            	B[1][0]=r[0];
+                for(int i = 0; i <= k; i++){
+                    A[n%2][i] = 0;
+                    B[n%2][i] = 0;
+                }
 
-            	for(int i=2;i<=n;i++) {
-            		A[i][0]=r[i-1]+A[i-1][0];
-            		for(int j=1;j<=k;j++) {
-            			A[i][j]
-            		}
-            	}
+                for(int i = n-1; i >= 0; i--){
 
-            }
+                    A[i%2][0] = min(A[(i+1)%2][0] + f[i], B[(i+1)%2][0] + r[i]);
+                    B[i%2][0] = B[(i+1)%2][0]+r[i];
+
+                    for(int j = 1; j <= k; j++){
+                        
+                        A[i%2][j] = min(A[(i+1)%2][j] + f[i], B[(i+1)%2][j] + r[i]);
+                        B[i%2][j] = min(A[(i+1)%2][j-1] + f[i], B[(i+1)%2][j]+r[i]);
+                    }
+                }
+
+                return B[0][k];
+
+        }
         
 // BEGIN CUT HERE
 	public:
