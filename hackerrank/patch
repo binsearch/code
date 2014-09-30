@@ -1,0 +1,81 @@
+diff --git a/cl1/icode.cc b/cl1/icode.cc
+index 8c87d95..166fcef 100644
+--- a/cl1/icode.cc
++++ b/cl1/icode.cc
+@@ -263,7 +263,7 @@ void Move_IC_Stmt::print_assembly(ostream & file_buffer)
+        switch (assem_format)
+        {
+        case a_op_r_o1: 
+-                       file_buffer << "\t" << op_name << ", ";
++                       file_buffer << "\t" << op_name << " ";
+                        result->print_asm_opd(file_buffer);
+                        file_buffer << ", ";
+                        opd1->print_asm_opd(file_buffer);
+@@ -272,7 +272,7 @@ void Move_IC_Stmt::print_assembly(ostream & file_buffer)
+                        break; 
+ 
+        case a_op_o1_r: 
+-                       file_buffer << "\t" << op_name << ", ";
++                       file_buffer << "\t" << op_name << " ";
+                        opd1->print_asm_opd(file_buffer);
+                        file_buffer << ", ";
+                        result->print_asm_opd(file_buffer);
+@@ -351,7 +351,7 @@ void Label_IC_Stmt::print_assembly(ostream & file_buffer)
+                        break; 
+ 
+        case a_op_r_o1: 
+-                       file_buffer << "\t" << op_name << ", ";
++                       file_buffer << "\t" << op_name << " ";
+                        result->print_asm_opd(file_buffer);
+                        file_buffer << ", ";
+                        opd1->print_asm_opd(file_buffer);
+diff --git a/cl1/procedure.cc b/cl1/procedure.cc
+index b961ead..138f5fd 100644
+--- a/cl1/procedure.cc
++++ b/cl1/procedure.cc
+@@ -205,8 +205,9 @@ void Procedure::print_prologue(ostream & file_buffer)
+        sub $fp, $sp, 4\t\t# Update the frame pointer\n";
+ 
+        int size = local_symbol_table.get_size();
++       size = -size;
+        if (size > 0)
+-               prologue << "\n\tsub $sp, $sp, " << size << "\t\t# Make space for the locals\n";
++               prologue << "\n\tsub $sp, $sp, " << (size + 4) << "\t\t# Make space for the locals\n";
+        else
+                prologue << "\n\tsub $sp, $sp, 4\t\t#Make space for the locals\n";
+ 
+@@ -220,9 +221,9 @@ void Procedure::print_epilogue(ostream & file_buffer)
+        stringstream epilogue;
+ 
+        int size = local_symbol_table.get_size();
+-
++       size = -size;
+        if (size > 0)
+-               epilogue << "\n# Epilogue Begins\n\tadd $sp, $sp, " << size << "\n";
++               epilogue << "\n# Epilogue Begins\n\tadd $sp, $sp, " << (size + 4) << "\n";
+        else
+                epilogue << "\n#Epilogue Begins\n\tadd $sp, $sp, 4\n";
+ 
+diff --git a/cl1/symbol-table.cc b/cl1/symbol-table.cc
+index f7a789d..6f6b9b1 100644
+--- a/cl1/symbol-table.cc
++++ b/cl1/symbol-table.cc
+@@ -152,7 +152,7 @@ void Symbol_Table::print(ostream & file_buffer)
+                if (start_off == end_off)
+                        file_buffer << " (No offset assigned yet)\n";
+                else
+-                       file_buffer << " Start Offset: " << start_off << " End Offset: " << end_off << "\n";
++                       file_buffer << " Start Offset: " << -start_off << " End Offset: " << -end_off << "\n";
+        }
+ }
+ 
+@@ -194,7 +194,7 @@ int Symbol_Table::get_size_of_value_type(Data_Type dt)
+ {
+        switch(dt)
+        {
+-       case int_data_type: return 4; break;
++       case int_data_type: return -4; break;
+        case void_data_type: CHECK_INVARIANT(CONTROL_SHOULD_NOT_REACH, "Attempt to seek size of type void");
+        defualt: CHECK_INVARIANT(CONTROL_SHOULD_NOT_REACH, "Data type not supperted");
+        }
+

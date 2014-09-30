@@ -1,0 +1,682 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html class="js" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml" xml:lang="en" dir="ltr" lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script async="" src="1_files/4e7c8fce06a9ab05530008e5.js"></script><script>
+            (function(_,e,rr,s){_errs=[s];var c=_.onerror;_.onerror=function(){var a=arguments;_errs.push(a);
+            c&&c.apply(this,a)};var b=function(){var c=e.createElement(rr),b=e.getElementsByTagName(rr)[0];
+            c.src="//beacon.errorception.com/"+s+".js";c.async=!0;b.parentNode.insertBefore(c,b)};
+            _.addEventListener?_.addEventListener("load",b,!1):_.attachEvent("onload",b)})
+            (window,document,"script","4e7c8fce06a9ab05530008e5");
+        </script>
+
+		<script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+        <title>List Editing | CodeChef</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="programming, language, algorithm, contest, contester, Java, C#, Pascal, C, C++, python, ruby, caml, ocaml, perl, haskell, lisp, prolog, fortran, assembler, asembler, functional, online, judge, problem, problemset, ACM">
+<link rel="shortcut icon" href="http://www.codechef.com/misc/favicon.ico" type="image/x-icon">
+        <link type="text/css" rel="stylesheet" media="all" href="1_files/css_99c9e8eaefac82e0799beb4a558dadb1.css">
+        <link rel="stylesheet" type="text/css" href="1_files/acmkanpurproblem.css">
+        <script type="text/javascript" src="1_files/jquery.js"></script>
+<script type="text/javascript" src="1_files/drupal.js"></script>
+<script type="text/javascript" src="1_files/fbconnect.js"></script>
+<script type="text/javascript" src="1_files/fivestar.js"></script>
+<script type="text/javascript" src="1_files/lightbox.js"></script>
+<script type="text/javascript" src="1_files/nice_menus.js"></script>
+<script type="text/javascript" src="1_files/common.js"></script>
+<script type="text/javascript" src="1_files/jquery_002.js"></script>
+<script type="text/javascript" src="1_files/jquery_004.js"></script>
+<script type="text/javascript" src="1_files/tableofcontents.js"></script>
+<script type="text/javascript" src="1_files/codechef_recent_comments.js"></script>
+<script type="text/javascript" src="1_files/textarea.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","fbconnect":{"user_pictures":"allow","language_code":"en_US","app_id":"191217060453","debug":0,"connect_js":"document.location.protocol + '\/\/connect.facebook.net\/en_US\/all.js'","loginout_mode":"manual","invite_name":"CodeChef","fast_reg_mode":0,"fast_reg_autoname":0,"fbuid":"100000578411050","user":{"uid":"480559","fbuid":null}},"fivestar":{"titleUser":"Your rating: ","titleAverage":"Average: ","feedbackSavingVote":"Saving your vote...","feedbackVoteSaved":"Your vote has been saved.","feedbackDeletingVote":"Deleting your vote...","feedbackVoteDeleted":"Your vote has been deleted."},"lightbox2":{"rtl":0,"file_path":"\/(\\w\\w\/)sites\/default\/files","default_image":"\/sites\/all\/modules\/lightbox2\/images\/brokenimage.jpg","border_size":10,"font_color":"000","box_color":"eeedec","top_position":"","overlay_opacity":"0.8","overlay_color":"000","disable_close_click":1,"resize_sequence":0,"resize_speed":400,"fade_in_speed":400,"slide_down_speed":600,"use_alt_layout":0,"disable_resize":0,"disable_zoom":0,"force_show_nav":0,"show_caption":true,"loop_items":0,"node_link_text":"View Image Details","node_link_target":0,"image_count":"Image !current of !total","video_count":"Video !current of !total","page_count":"Page !current of !total","lite_press_x_close":"press \u003ca href=\"#\" onclick=\"hideLightbox(); return FALSE;\"\u003e\u003ckbd\u003ex\u003c\/kbd\u003e\u003c\/a\u003e to close","download_link_text":"","enable_login":false,"enable_contact":false,"keys_close":"c x 27","keys_previous":"p 37","keys_next":"n 39","keys_zoom":"z","keys_play_pause":"32","display_image_size":"original","image_node_sizes":"()","trigger_lightbox_classes":"","trigger_lightbox_group_classes":"","trigger_slideshow_classes":"","trigger_lightframe_classes":"","trigger_lightframe_group_classes":"","custom_class_handler":0,"custom_trigger_classes":"","disable_for_gallery_lists":true,"disable_for_acidfree_gallery_lists":true,"enable_acidfree_videos":true,"slideshow_interval":5000,"slideshow_automatic_start":true,"slideshow_automatic_exit":true,"show_play_pause":true,"pause_on_next_click":false,"pause_on_previous_click":true,"loop_slides":false,"iframe_width":500,"iframe_height":70,"iframe_border":1,"enable_video":0}});
+//--><!]]>
+</script>
+        <meta property="og:title" content="List Editing">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="http://www.codechef.com/ACMKGP13/problems/EDITLIST">
+        <meta property="og:image" content="http://www.codechef.com/misc/fb-chef.gif">
+        <meta property="og:site_name" content="CodeChef">
+        <meta property="fb:app_id" content="155442717838457">
+
+		<script type="text/javascript">
+				</script>
+
+    <style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}
+.fb_invisible{display:none}
+.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}
+.fb_reset > div{overflow:hidden}
+.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}
+.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}
+.fb_dialog_content{background:#fff;color:#333}
+.fb_dialog_close_icon{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px;top:8px\9;right:7px\9}
+.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}
+.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}
+.fb_dialog_close_icon:hover{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}
+.fb_dialog_close_icon:active{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}
+.fb_dialog_loader{background-color:#f2f2f2;border:1px solid #606060;font-size:24px;padding:20px}
+.fb_dialog_top_left,
+.fb_dialog_top_right,
+.fb_dialog_bottom_left,
+.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}
+.fb_dialog_top_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}
+.fb_dialog_top_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}
+.fb_dialog_bottom_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}
+.fb_dialog_bottom_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}
+.fb_dialog_vert_left,
+.fb_dialog_vert_right,
+.fb_dialog_horiz_top,
+.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}
+.fb_dialog_vert_left,
+.fb_dialog_vert_right{width:10px;height:100%}
+.fb_dialog_vert_left{margin-left:-10px}
+.fb_dialog_vert_right{right:0;margin-right:-10px}
+.fb_dialog_horiz_top,
+.fb_dialog_horiz_bottom{width:100%;height:10px}
+.fb_dialog_horiz_top{margin-top:-10px}
+.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}
+.fb_dialog_iframe{line-height:0}
+.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3b5998;color:#fff;font-size:14px;font-weight:bold;margin:0}
+.fb_dialog_content .dialog_title > span{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif)
+no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}
+body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}
+.fb_dialog.fb_dialog_mobile.loading{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif)
+white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}
+.fb_dialog.fb_dialog_mobile.loading.centered{max-height:590px;min-height:590px;max-width:500px;min-width:500px}
+#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}
+#fb-root #fb_dialog_ipad_overlay.hidden{display:none}
+.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}
+.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0 0, 0 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}
+.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%
+}
+.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px
+}
+.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px
+}
+.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0 0, 0 100%, from(#4966A6),
+color-stop(0.5, #355492), to(#2A4887));border:1px solid #29447e;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset,
+rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}
+.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}
+.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}
+.fb_dialog_content .dialog_content{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}
+.fb_dialog_content .dialog_footer{background:#f2f2f2;border:1px solid #555;border-top-color:#ccc;height:40px}
+#fb_dialog_loader_close{float:left}
+.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}
+.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}
+.fb_iframe_widget{display:inline-block;position:relative}
+.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}
+.fb_iframe_widget iframe{position:absolute}
+.fb_iframe_widget_lift{z-index:1}
+.fb_hide_iframes iframe{position:relative;left:-10000px}
+.fb_iframe_widget_loader{position:relative;display:inline-block}
+.fb_iframe_widget_fluid{display:inline}
+.fb_iframe_widget_fluid span{width:100%}
+.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}
+.fb_iframe_widget_loader .FB_Loader{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}
+.fb_connect_bar_container div,
+.fb_connect_bar_container span,
+.fb_connect_bar_container a,
+.fb_connect_bar_container img,
+.fb_connect_bar_container strong{background:none;border-spacing:0;border:0;direction:ltr;font-style:normal;font-variant:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal;vertical-align:baseline}
+.fb_connect_bar_container{position:fixed;left:0 !important;right:0 !important;height:42px !important;padding:0 25px !important;margin:0 !important;vertical-align:middle !important;border-bottom:1px solid #333 !important;background:#3b5998 !important;z-index:99999999 !important;overflow:hidden !important}
+.fb_connect_bar_container_ie6{position:absolute;top:expression(document.compatMode=="CSS1Compat"? document.documentElement.scrollTop+"px":body.scrollTop+"px")}
+.fb_connect_bar{position:relative;margin:auto;height:100%;width:100%;padding:6px 0 0 0 !important;background:none;color:#fff !important;font-family:"lucida grande", tahoma, verdana, arial, sans-serif !important;font-size:13px !important;font-style:normal !important;font-variant:normal !important;font-weight:normal !important;letter-spacing:normal !important;line-height:1 !important;text-decoration:none !important;text-indent:0 !important;text-shadow:none !important;text-transform:none !important;white-space:normal !important;word-spacing:normal !important}
+.fb_connect_bar a:hover{color:#fff}
+.fb_connect_bar .fb_profile img{height:30px;width:30px;vertical-align:middle;margin:0 6px 5px 0}
+.fb_connect_bar div a,
+.fb_connect_bar span,
+.fb_connect_bar span a{color:#bac6da;font-size:11px;text-decoration:none}
+.fb_connect_bar .fb_buttons{float:right;margin-top:7px}
+.fb_edge_widget_with_comment{position:relative;*z-index:1000}
+.fb_edge_widget_with_comment span.fb_edge_comment_widget{position:absolute}
+.fb_edge_widget_with_comment span.fb_send_button_form_widget{z-index:1}
+.fb_edge_widget_with_comment span.fb_send_button_form_widget .FB_Loader{left:0;top:1px;margin-top:6px;margin-left:0;background-position:50% 50%;background-color:#fff;height:150px;width:394px;border:1px #666 solid;border-bottom:2px solid #283e6c;z-index:1}
+.fb_edge_widget_with_comment span.fb_send_button_form_widget.dark .FB_Loader{background-color:#000;border-bottom:2px solid #ccc}
+.fb_edge_widget_with_comment span.fb_send_button_form_widget.siderender
+.FB_Loader{margin-top:0}
+.fbpluginrecommendationsbarleft,
+.fbpluginrecommendationsbarright{position:fixed !important;bottom:0;z-index:999}
+.fbpluginrecommendationsbarleft{left:10px}
+.fbpluginrecommendationsbarright{right:10px}</style></head>
+    <body class="sidebar-right lightbox-processed"><center>
+
+            <div id="header" class="wrapper">
+                <div class="inner-wrapper">
+                    <!-- Header -->
+                    <div id="logo-floater" class="cols-2">
+                        <a href="http://www.codechef.com/" title=""><img src="1_files/logo.png" alt="CodeChef is a non-commercial competitive programming community" id="logo"><span></span></a>                    </div>
+                    <div class="cols-2">
+                        <div id="custom-login">
+                                <!--Hello <strong>Admin</strong>, Check your <strong><a href="">Account</a></strong> or <a href="/logout">Log Out</a>-->
+                            <div id="user-bar">
+                <div class="login-user"> 
+                    <table cellpadding="0" cellspacing="0">
+                        <tbody><tr>
+                            <td>
+        <span>
+            Hello acmkg13tm414! <br>
+            <a href="http://www.codechef.com/users/acmkg13tm414" title="Edit Your Account">Account</a>
+            or <a href="http://www.codechef.com/logout">Log Out</a>
+        </span></td>
+                        </tr>
+                    </tbody></table>
+                </div></div>
+        <div id="facebook-login">
+            <table cellpadding="0" cellspacing="0">
+                <tbody><tr>
+                    <td>Login or<br>Signup with</td>
+                    <td><span class="facebook-button"><div fb-iframe-plugin-query="app_id=191217060453&amp;locale=en_US&amp;login_text=Connect&amp;scope=publish_stream%2C%20offline_access&amp;sdk=joey&amp;size=medium" fb-xfbml-state="rendered" login_text="Connect" class="fb-login-button fb_iframe_widget" size="medium" onlogin="facebook_onlogin_ready();" background="dark" v="2" scope="publish_stream, offline_access"><span style="vertical-align: bottom; width: 78px; height: 22px;"><iframe class="" src="1_files/login_button.html" style="border: medium none; visibility: visible; width: 78px; height: 22px;" title="fb:login_button Facebook Social Plugin" allowtransparency="true" name="f191e89e01d97bc" frameborder="0" height="1000px" scrolling="no" width="1000px"></iframe></span></div></span></td>
+                </tr>
+            </tbody></table>
+        </div>    
+        <div class="question-note">
+            <a href="#">
+                <span class="icon-question">Note</span>
+                <div class="tooltip">
+                    <ul>
+                        <li>Publicize your achievements on your Facebook Wall.</li>
+                        <li>Challenge your friends or ask them for help.</li>
+                    </ul>
+                </div>
+            </a>
+        </div>                        </div>
+
+                        <div id="block-nice_menus-1" class="block block-nice_menus block-header">
+  <div class="content">
+    <h2><span class="nice-menu-hide-title">Site Navigation</span></h2>    <ul class="nice-menu nice-menu-down" id="nice-menu-1"><li id="menu-302" class="menuparent menu-path-problems-easy"><a href="http://www.codechef.com/problems/easy" title="">PRACTICE</a><ul><li id="menu-303" class="menu-path-problems-easy"><a href="http://www.codechef.com/problems/easy" title="">Easy</a></li>
+<li id="menu-304" class="menu-path-problems-medium"><a href="http://www.codechef.com/problems/medium" title="">Medium</a></li>
+<li id="menu-305" class="menu-path-problems-hard"><a href="http://www.codechef.com/problems/hard" title="">Hard</a></li>
+<li id="menu-1819" class="menu-path-problems-challenge"><a href="http://www.codechef.com/problems/challenge" title="">Challenge</a></li>
+<li id="menu-1376" class="menu-path-problems-extcontest"><a href="http://www.codechef.com/problems/extcontest" title="">Peer</a></li>
+<li id="menu-2602" class="menu-path-problems-school"><a href="http://www.codechef.com/problems/school" title="">School</a></li>
+</ul>
+</li>
+<li id="menu-309" class="menuparent menu-path-contests"><a href="http://www.codechef.com/contests" title="">COMPETE</a><ul><li id="menu-2203" class="menu-path-www.codechef.com-contests"><a href="http://www.codechef.com/contests" title="">All Contests</a></li>
+<li id="menu-3834" class="menu-path-www.codechef.com-NOV13"><a href="http://www.codechef.com/NOV13" title="">November Challenge 2013</a></li>
+<li id="menu-3831" class="menu-path-www.codechef.com-ACMKGP13"><a href="http://www.codechef.com/ACMKGP13" title="">ACM Kharagpur online contest</a></li>
+<li id="menu-3608" class="menu-path-www.codechef.com-LTIME05"><a href="http://www.codechef.com/LTIME05" title="">October Lunchtime 2013</a></li>
+</ul>
+</li>
+<li id="menu-138" class="menuparent menu-path-discuss.codechef.com-"><a href="http://discuss.codechef.com/" title="">DISCUSS</a><ul><li id="menu-139" class="menu-path-discuss.codechef.com-"><a href="http://discuss.codechef.com/" title="">Forums</a></li>
+<li id="menu-140" class="menu-path-blog.codechef.com-"><a href="http://blog.codechef.com/" title="">Blog</a></li>
+<li id="menu-920" class="menu-path-wiki-"><a href="http://www.codechef.com/wiki/" title="">Wiki</a></li>
+<li id="menu-2202" class="menu-path-https--www.facebook.com-CodeChef"><a href="https://www.facebook.com/CodeChef" title="">Facebook</a></li>
+<li id="menu-141" class="menu-path-www.twitter.com-codechef"><a href="http://www.twitter.com/codechef" title="">Twitter</a></li>
+</ul>
+</li>
+<li id="menu-143" class="menuparent menu-path-node-124098"><a href="http://www.codechef.com/community" title="">COMMUNITY</a><ul><li id="menu-733" class="menu-path-node-157517"><a href="http://www.codechef.com/hostyourcontest" title="Hosting Contest on CodeChef">Host your Contest</a></li>
+<li id="menu-2310" class="menu-path-www.codechef.com-goforgold"><a href="http://www.codechef.com/goforgold" title="">Go for Gold</a></li>
+<li id="menu-3830" class="menu-path-www.codechef.com-campus_chapter-about"><a href="http://www.codechef.com/campus_chapter/about" title="">Campus Chapter</a></li>
+</ul>
+</li>
+<li id="menu-147" class="menuparent menu-path-node-3"><a href="http://www.codechef.com/help" title="">HELP</a><ul><li id="menu-643" class="menu-path-www.codechef.com-wiki-faq"><a href="http://www.codechef.com/wiki/faq" title="">Frequently Asked Questions</a></li>
+<li id="menu-710" class="menu-path-www.codechef.com-wiki-faq-problem-setters"><a href="http://www.codechef.com/wiki/faq-problem-setters" title="">FAQ for problem setters</a></li>
+<li id="menu-1389" class="menu-path-node-313543"><a href="http://www.codechef.com/problemsetting" title="Codechef Problem Creation">Problem Setting</a></li>
+<li id="menu-850" class="menu-path-www.codechef.com-wiki-tutorials"><a href="http://www.codechef.com/wiki/tutorials" title="">Tutorials</a></li>
+<li id="menu-2200" class="menu-path-www.codechef.com-long-ranklist-AX"><a href="http://www.codechef.com/long/ranklist/AX" title="Long contest rankings list">Long Contest Ranks</a></li>
+<li id="menu-2199" class="menu-path-www.codechef.com-short-ranklist-AX"><a href="http://www.codechef.com/short/ranklist/AX" title="Short contest rankings list">Short Contest Ranks</a></li>
+<li id="menu-1820" class="menu-path-node-503865"><a href="http://www.codechef.com/event-calendar" title="Event Calendar">Event Calendar</a></li>
+<li id="menu-2372" class="menu-path-discuss.ww2.codechef.com-top-users-"><a href="http://discuss.ww2.codechef.com/top/users/" title="">Top Contributors on Discuss</a></li>
+</ul>
+</li>
+<li id="menu-150" class="menuparent menu-path-node-1"><a href="http://www.codechef.com/aboutus" title="">ABOUT</a><ul><li id="menu-151" class="menu-path-node-1"><a href="http://www.codechef.com/aboutus" title="">About CodeChef</a></li>
+<li id="menu-849" class="menu-path-node-178314"><a href="http://www.codechef.com/team" title="Team CodeChef">Team CodeChef</a></li>
+<li id="menu-708" class="menu-path-node-157468"><a href="http://www.codechef.com/press" title="Press Room">Press Room</a></li>
+<li id="menu-1312" class="menu-path-www.codechef.com-financials-"><a href="http://www.codechef.com/financials/" title="">CodeChef Financials</a></li>
+<li id="menu-1313" class="menu-path-www.codechef.com-sponsorships"><a href="http://www.codechef.com/sponsorships" title="">CodeChef Sponsorships</a></li>
+<li id="menu-709" class="menu-path-node-157470"><a href="http://www.codechef.com/ceoscorner" title="CEO's Corner">CEO's Corner</a></li>
+<li id="menu-1858" class="menu-path-node-614485"><a href="http://www.codechef.com/contactus" title="">Contact Us</a></li>
+<li id="menu-152" class="menu-path-www.directi.com-"><a href="http://www.directi.com/" title="">About Directi</a></li>
+</ul>
+</li>
+</ul>
+  </div>
+</div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- /HEADER -->
+            <center>
+                <table id="maintable" class="maintable" cellpadding="10" cellspacing="0">
+                    <tbody><tr>
+                        <td class="content" width="99%">
+                            <div class="wrapper" id="content-regions">
+                                <div class="inner-wrapper rounded-cr-body">
+                                    <div class="rounded-cr-header">
+                                        <div class="rounded-cr-footer">
+                                            <div id="breadcrumb"><div class="breadcrumb"><a href="http://www.codechef.com/">Home</a>&nbsp;»&nbsp;<a href="http://www.codechef.com/contests/">Compete</a>&nbsp;»&nbsp;<a href="http://www.codechef.com/ACMKGP13/">ACM-ICPC Asia-Kharagpur Site First Round Online Contest 2013</a>&nbsp;»&nbsp;List Editing</div></div>
+                                            <div id="primary-colum-pad">
+                                                <div id="primary-colum-wrapper">
+                                                    <img class="content-wrapper-header" src="1_files/content-wrapper-top-big.gif">
+                                                    <div id="problem-page">
+                                                        <div class="prob">
+                                                            <div class="primary-col-wrapper">
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                <table class="pagetitle-prob" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                                    <tbody><tr>
+                                                                        <td width="55%">
+                                                                            <h1>List Editing</h1>
+                                                                            <p>Problem code: EDITLIST</p>
+																			                                                                            <fb:like class="fb_edge_widget_with_comment fb_iframe_widget" fb-xfbml-state="rendered" send="true" width="450" show_faces="false" action="recommend" font="verdana"><span style="height: 28px; width: 450px;"><iframe src="1_files/like.html" class="fb_ltr" title="Like this content on Facebook." style="border: medium none; overflow: hidden; height: 28px; width: 450px;" name="fd8d6e5cbf9a46" id="f17703b8d1d9118" scrolling="no"></iframe></span></fb:like>
+                                                                        </td>
+                                                                        <td>
+                                                                            <ul class="button-list">
+                                                                                <li style="display:&lt;?php print $node-&gt;answerDisplay; ?&gt;"><a href="http://www.codechef.com/ACMKGP13/submit/EDITLIST">Submit</a></li>                                                                                <li><a href="http://www.codechef.com/ACMKGP13/status/EDITLIST,acmkg13tm414">My Submissions</a></li>                                                                                <li><a href="http://www.codechef.com/ACMKGP13/status/EDITLIST">All Submissions</a></li>
+                                                                            </ul>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody></table>
+                                                                <div class="primary-colum-width-left">
+                                                                    <div id="node-3817729" class="node clear-block">
+        
+    <div class="meta">
+        
+            </div>
+
+    <div class="content">
+<p>At the ACME University, as part of the Graduate course work, each 
+student is required to undergo project work. The authorities always make
+ an effort to find a match among the students’ interests and the 
+interests of the faculty members. First, they take a list of topics from
+ the students' and a list of topics from the faculty. In order to avoid 
+identifying students and faculties, all they preserve is simply, two 
+consolidated lists of topics – one from the students and one from the 
+faculties. No personal identification exists within these lists. The 
+lists are sorted in ascending order of the indices of project topics in 
+the repository. No topic appears twice in the same list.</p>
+<p>To make the process simple, ACME University maintains a repository of
+ 100 project topics - numbered from 1 to 100, inclusive. The students 
+and faculty members must choose among those topics only. Their lists may
+ have different number of topics; since more than one student (or 
+faculty) may choose to work work on the same topic or some may like to 
+work on multiple topics etc.</p>
+<p>Once these two lists have been obtained, the university tries to make
+ them identical. The student’s list is modified to match with the 
+faculty’s list. The modification may be via</p>
+<ul>
+<li>inserting a new topic in the list</li>
+<li>deleting a topic from the list</li>
+<li>substituting a topic by another one</li>
+</ul>
+<p>The university wants to do this with minimal number of modifications 
+to the list as each modification needs one full day to be communicated 
+and accepted by the students. It is assumed that the students do not 
+disagree to any such modification.</p>
+<p>Write a program that accepts the lists from students and faculties 
+and computes the minimum number of modifications that will require to be
+ made to make the student's list identical to the faculty's list.</p>
+<h3>Input</h3>
+<p>The input contains several test cases. The first line of the input 
+contains the number T, the number of test cases. The first line in each 
+test case contains the number M, the number of topics in the students' 
+list. The second line contains M integers A<sub>1</sub>, A<sub>2</sub> .., A<sub>M</sub>
+ separated by single space characters. The third line in each test case 
+contains the number N, the number of topics in the faculty's list. The 
+fourth line contains N integers B<sub>1</sub>, B<sub>2</sub> .., B<sub>N</sub> separated by single space characters.</p>
+<h3>Output</h3>
+<p>Output T numbers, each on a line by itself, without any leading 
+spaces or zeros. The number should be the minimum number of 
+modifications that can be made to the students' list to make it 
+identical to the faculty's list, for each respective test case.</p>
+<h3>Constraints</h3>
+<pre>1 ≤ T ≤ 100
+1 ≤ M, N ≤ 100
+1 ≤ A<sub>i</sub>, B<sub>i</sub> ≤ 100
+The list { A<sub>1</sub> .. A<sub>M</sub> } has no duplicates.
+The list { A<sub>1</sub> .. A<sub>M</sub> } is sorted in ascending order.
+The list { B<sub>1</sub> .. B<sub>N</sub> } has no duplicates.
+The list { B<sub>1</sub> .. B<sub>N</sub> } is sorted in ascending order.
+</pre>
+<h3>Sample Input</h3>
+<pre>2
+4
+1 3 5 7
+2
+4 6
+3
+1 2 3
+2
+2 3
+
+</pre>
+<h3>Sample Output</h3>
+<pre>4
+1
+
+</pre>
+<h3>Explanation</h3>
+<p>In the first test case 1, 3, 5 and 7 should be deleted from the list 
+and 4 and 6 should be inserted. But this can take 6 modifications. 
+Instead, we can delete either two of the 4 topics from the students' 
+list and substitute the remaining two by 4 and 6 respectively. This 
+takes 4 modifications. 4 modifications is optimal for this test case.</p>    </div>
+    <hr>
+    <table cellpadding="0" cellspacing="0" align="left">
+        <tbody><tr>
+            <td width="14%">Author:</td>
+            <td><a href="http://www.codechef.com/users/admin">admin</a></td>
+		</tr>
+				                <tr>
+            <td width="14%">Tags</td>
+            <td><a class="problem-tag-small " href="http://www.codechef.com/tags/problems/admin">
+                    admin
+                </a></td>
+        </tr>
+        		<tr>
+            <td width="14%">Date Added:</td>
+            <td>28-10-2013</td>
+        </tr>
+        <tr>
+            <td width="14%">Time Limit:</td>
+            <td>1 sec</td>
+        </tr>
+        <tr>
+            <td width="14%">Source Limit:</td>
+            <td>50000 Bytes</td>
+        </tr>
+        <tr>
+            <td width="14%">Languages:</td>
+            <td>C, CPP 4.8.1, JAVA</td>
+        </tr>
+    </tbody></table>
+    <p style="clear:left;"><br></p>
+    <ul class="button-list button-list-left">
+        <li style="display:block"><a href="http://www.codechef.com/ACMKGP13/submit/EDITLIST">Submit</a></li>
+    </ul>
+    <hr>
+    <h2 style="text-decoration: none;">Comments</h2>
+</div>
+<div id="comments">
+  <div class="box">
+  <h2 class="title"><hr></h2>  <div class="content"><span style="font-weight:bold;color:#777;">Need help? Post a comment. But before that please spare a moment to read the <a href="http://discuss.codechef.com/questions/855/what-kind-of-comment-should-i-post-on-the-problem-page" target="_blank">guidelines</a>.</span><form action="/comment/reply/3817729" accept-charset="UTF-8" method="post" id="comment-form">
+<div><div class="form-item">
+ <label>Your name: </label>
+ acmkg13tm414
+</div>
+<div class="form-item" id="edit-comment-wrapper">
+ <label for="edit-comment">Comment: <span class="form-required" title="This field is required.">*</span></label>
+ <div class="resizable-textarea"><span><textarea cols="60" rows="5" name="comment" id="edit-comment" class="form-textarea resizable required textarea-processed"></textarea><div style="margin-right: -5px;" class="grippie"></div></span></div>
+</div>
+<input name="form_build_id" id="form-a7c198b405e3d27f12cc140d278127e1" value="form-a7c198b405e3d27f12cc140d278127e1" type="hidden">
+<input name="form_token" id="edit-form-token" value="f843a969eb372278573d28917f600392" type="hidden">
+<input name="form_id" id="edit-comment-form" value="comment_form" type="hidden">
+<input name="op" id="edit-submit" value="Save" class="form-submit" type="submit">
+
+</div></form>
+</div>
+</div>
+</div>
+                                                                </div>
+                                                                <div class="primary-colum-width-right">
+                                                                    <div class="content-spacer-b">
+                                                                        <div id="block-problem_status-0" class="block block-problem_status">
+  <div class="r1 t"></div><div class="r2"></div><div class="r3"></div><div class="r4"></div><div class="r5"></div>
+  <div class="content">
+        <div class="center topbox-small-1" style="margin-left:0px;"><h3>SUCCESSFUL SUBMISSIONS</h3><h3></h3></div><br>
+		<div id="rankContentDiv" class="table-results maintable"><div class="table-questions" id="rankContentDiv">
+<div class="tablebox-section-small l-float">
+
+    <link href="1_files/submission.css" rel="stylesheet" type="text/css">
+
+    <table style="border:#E0E0E0 solid 1px; " cellpadding="0" cellspacing="0" align="left" border="0" width="333">
+        <tbody>
+        <tr class="headerrow">
+                        <th style="background:#6E9E90; color:#FFF; font-weight:bold; height:20px;">User</th><th style="background:#6E9E90; color:#FFF; font-weight:bold; height:20px;" class="centered" width="25">Time</th><th style="background:#6E9E90; color:#FFF; font-weight:bold; height:20px;" class="centered" width="25">Mem</th><th style="background:#6E9E90; color:#FFF; font-weight:bold; height:20px;" class="centered" width="80">Lang</th><th style="background:#6E9E90; color:#FFF; font-weight:bold; height:20px;" class="centered">Solution</th>        </tr>
+
+        <tr class="kol" style="height:40px;" bgcolor="#E0E0E0"><td style="padding-left:4px;"><a href="http://www.codechef.com/users/acmkg13tm040" title="acmkg13tm040" target="_blank">acmkg13tm040</a></td><td class="centered" width="25">0.00</td><td class="centered" width="25">2.2M</td><td class="centered" width="80">C</td><td class="centered" width="60"><ul><li><a class="disabled">View</a></li></ul></td></tr><tr class="kol" style="height:40px;" bgcolor="#ffffff"><td style="padding-left:4px;"><a href="http://www.codechef.com/users/acmkg13tm055" title="acmkg13tm055" target="_blank">acmkg13tm055</a></td><td class="centered" width="25">0.00</td><td class="centered" width="25">2.2M</td><td class="centered" width="80">C</td><td class="centered" width="60"><ul><li><a class="disabled">View</a></li></ul></td></tr><tr class="kol" style="height:40px;" bgcolor="#E0E0E0"><td style="padding-left:4px;"><a href="http://www.codechef.com/users/acmkg13tm080" title="acmkg13tm080" target="_blank">acmkg13tm080</a></td><td class="centered" width="25">0.00</td><td class="centered" width="25">2.2M</td><td class="centered" width="80">C</td><td class="centered" width="60"><ul><li><a class="disabled">View</a></li></ul></td></tr><tr class="kol" style="height:40px;" bgcolor="#ffffff"><td style="padding-left:4px;"><a href="http://www.codechef.com/users/acmkg13tm202" title="acmkg13tm202" target="_blank">acmkg13tm202</a></td><td class="centered" width="25">0.00</td><td class="centered" width="25">2.2M</td><td class="centered" width="80">C</td><td class="centered" width="60"><ul><li><a class="disabled">View</a></li></ul></td></tr><tr class="kol" style="height:40px;" bgcolor="#E0E0E0"><td style="padding-left:4px;"><a href="http://www.codechef.com/users/acmkg13tm559" title="acmkg13tm559" target="_blank">acmkg13tm559</a></td><td class="centered" width="25">0.00</td><td class="centered" width="25">2.2M</td><td class="centered" width="80">C</td><td class="centered" width="60"><ul><li><a class="disabled">View</a></li></ul></td></tr><tr class="kol" style="height:40px;" bgcolor="#ffffff"><td style="padding-left:4px;"><a href="http://www.codechef.com/users/acmkg13tm697" title="acmkg13tm697" target="_blank">acmkg13tm697</a></td><td class="centered" width="25">0.00</td><td class="centered" width="25">2.2M</td><td class="centered" width="80">C</td><td class="centered" width="60"><ul><li><a class="disabled">View</a></li></ul></td></tr><tr class="kol" style="height:40px;" bgcolor="#E0E0E0"><td style="padding-left:4px;"><a href="http://www.codechef.com/users/acmkg13tm709" title="acmkg13tm709" target="_blank">acmkg13tm709</a></td><td class="centered" width="25">0.00</td><td class="centered" width="25">2.2M</td><td class="centered" width="80">C</td><td class="centered" width="60"><ul><li><a class="disabled">View</a></li></ul></td></tr><tr class="kol" style="height:40px;" bgcolor="#ffffff"><td style="padding-left:4px;"><a href="http://www.codechef.com/users/acmkg13tm800" title="acmkg13tm800" target="_blank">acmkg13tm800</a></td><td class="centered" width="25">0.00</td><td class="centered" width="25">2.2M</td><td class="centered" width="80">C</td><td class="centered" width="60"><ul><li><a class="disabled">View</a></li></ul></td></tr><tr class="kol" style="height:40px;" bgcolor="#E0E0E0"><td style="padding-left:4px;"><a href="http://www.codechef.com/users/acmkg13tm196" title="acmkg13tm196" target="_blank">acmkg13tm196</a></td><td class="centered" width="25">0.00</td><td class="centered" width="25">2.2M</td><td class="centered" width="80">C</td><td class="centered" width="60"><ul><li><a class="disabled">View</a></li></ul></td></tr><tr class="kol" style="height:40px;" bgcolor="#ffffff"><td style="padding-left:4px;"><a href="http://www.codechef.com/users/acmkg13tm302" title="acmkg13tm302" target="_blank">acmkg13tm302</a></td><td class="centered" width="25">0.00</td><td class="centered" width="25">2.3M</td><td class="centered" width="80">C</td><td class="centered" width="60"><ul><li><a class="disabled">View</a></li></ul></td></tr><tr class="kol" style="height:40px;" bgcolor="#E0E0E0"><td style="padding-left:4px;"><a href="http://www.codechef.com/users/acmkg13tm048" title="acmkg13tm048" target="_blank">acmkg13tm048</a></td><td class="centered" width="25">0.00</td><td class="centered" width="25">3.2M</td><td class="centered" width="80">C++ 4.8.1</td><td class="centered" width="60"><ul><li><a class="disabled">View</a></li></ul></td></tr><tr class="kol" style="height:40px;" bgcolor="#ffffff"><td style="padding-left:4px;"><a href="http://www.codechef.com/users/acmkg13tm051" title="acmkg13tm051" target="_blank">acmkg13tm051</a></td><td class="centered" width="25">0.00</td><td class="centered" width="25">3.2M</td><td class="centered" width="80">C++ 4.8.1</td><td class="centered" width="60"><ul><li><a class="disabled">View</a></li></ul></td></tr>        </tbody>
+    </table>
+    </div>
+
+<div id="hidden">
+                <input id="pcode" value="EDITLIST" name="pcode" type="hidden"><input id="ccode" value="ACMKGP13" name="ccode" type="hidden">
+				<input id="next_p" value="1" name="n" type="hidden">
+				<input id="prev_p" value="-1" name="p" type="hidden">
+            </div>
+            <table class="problems" style="padding:0px; border-color:white; clear: both;" border="0" width="333">
+            <tbody>
+                <tr>
+                    <td style="border-bottom:0;" width="68">
+                      
+                    </td>
+                    <td style="border-bottom:0;" width="204">
+                    <div id="loader" style="height:20px;" align="center"><div class="pageinfo" align="center"><center>1 of 10</center></div></div>
+                    </td>
+                    <td style="border-bottom:0;" align="right" width="68">
+                      <a onclick="onload_getpage_ssubmissions('next');"><img src="1_files/page-next-active.gif"></a>
+                    </td>
+                </tr>
+              </tbody>
+             </table>
+           </div></div>  </div>
+  <div class="r5"></div><div class="r4"></div><div class="r3"></div><div class="r2"></div><div class="r1 b"></div>
+</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <img class="content-wrapper-header" src="1_files/content-wrapper-bootm-big.gif">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody></table>
+
+                                    <div id="footer" class="wrapper">
+                        <!--<div class="r1 t"></div><div class="r2"></div><div class="r3"></div><div class="r4"></div><div class="r5"></div>-->
+                        <div class="content clear-block">
+                            <!-- Footer Contents -->
+                            <div id="block-block-13" class="block block-block block-header">
+  <div class="content">
+        <script language="javascript" type="text/javascript">
+function formatTime(ts) {
+  now = new Date(ts);
+ 
+  localtime = new Date();
+  hour = now.getHours();
+  min = now.getMinutes();
+  sec = now.getSeconds();
+  
+  if (min <= 9) {
+	 min = "0" + min;
+  }
+  if (sec <= 9) {
+	 sec = "0" + sec;
+  }
+  if (hour > 12) {
+	 hour = hour - 12;
+	 add = " PM";
+  } else {
+	 hour = hour;
+	 add = " AM";
+  }
+  if (hour == 12) {
+	 add = " PM";
+  }
+  if (hour == 00) {
+	 hour = "12";
+  }
+	
+  $('#server-time').html(((hour<=9) ? "0" + hour : hour) + ":" + min + ":" + sec + add);
+  
+  nextSec = (now.getTime() + 1000);
+  
+  setTimeout("formatTime("+nextSec+")", 1000);
+}
+function getDtTimeZone() 
+{
+var rightNow = new Date();
+var toDay = new Date(rightNow.getFullYear(), 0, 1, 0, 0, 0, 0);
+var temp = toDay.toGMTString();
+var date2 = new Date(temp.substring(0, temp.lastIndexOf(" ") -1));
+var stdTime = (toDay - date2) / (1000 * 60 * 60);
+return stdTime;
+}
+/*var d=new Date();
+$.ajax({
+url: '/umtza',
+type:'POST',
+data: 'umtza='+d.toString(),
+});
+*/
+</script>
+<div id="disclaimer">CodeChef is a non-commercial competitive programming community</div>
+<div class="inner-wrapper">
+<div class="cols-2">
+<div id="secondary-nav">
+<ul>
+    <li><a href="http://www.codechef.com/aboutus/">About CodeChef</a></li>
+    <li><a target="_blank" href="http://www.directi.com/">About Directi</a></li>
+    <li><a href="http://www.codechef.com/ceoscorner/">CEO's Corner</a></li>
+    <li><a href="http://www.codechef.com/c-programming">C-Programming</a></li>
+    <li><a href="http://www.codechef.com/Programming-Languages">Programming Languages</a></li>
+    <li><a href="http://www.codechef.com/contactus">Contact Us</a></li>
+</ul>
+</div>
+<div id="copyright" class="cols-2">© 2009 <a style="color: rgb(0, 0, 0);" href="http://www.directi.com/">Directi Group</a>.  All Rights Reserved.  CodeChef uses SPOJ © by <a style="color: rgb(0, 0, 0);" href="http://www.sphere-research.com/">Sphere Research Labs</a></div>
+<div id="copyright-msg">In order to report copyright violations of any kind, send in an email to <a href="mailto:copyright@codechef.com">copyright@codechef.com</a></div>
+</div>
+<div class="cols-2-right" style="float:right;" align="right">
+<div id="sponsor-strip"><a target="_blank" href="http://www.directi.com/"><img alt="CodeChef a product of Directi" src="1_files/footer-sponsor-strip.gif"></a><br>
+<span>The time now is: <span id="server-time">11:39:17 AM</span></span>
+				<script language="javascript">
+						formatTime('November 02, 2013 11:37:48');
+					</script></div>
+</div>
+</div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="1_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-53602-42");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+
+
+
+<!-- Google Code for Visitors that do not sign-up Remarketing List -->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 1066618556;
+var google_conversion_language = "en";
+var google_conversion_format = "3";
+var google_conversion_color = "666666";
+var google_conversion_label = "gbUUCPTlhAIQvJ3N_AM";
+var google_conversion_value = 0;
+/* ]]> */
+</script>
+<script type="text/javascript" src="1_files/conversion.js">
+</script><img alt="" src="1_files/a_002.gif" border="0" height="1" width="1">
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="http://www.googleadservices.com/pagead/conversion/1066618556/?label=gbUUCPTlhAIQvJ3N_AM&amp;guid=ON&amp;script=0"/>
+</div>
+</noscript>
+
+<!-- Google Code for RM codechef Remarketing List -->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 968176136;
+var google_conversion_language = "en";
+var google_conversion_format = "3";
+var google_conversion_color = "ffffff";
+var google_conversion_label = "iDk7CPDZ7wMQiOTUzQM";
+var google_conversion_value = 0;
+/* ]]> */
+</script>
+<script type="text/javascript" src="1_files/conversion.js">
+</script><img alt="" src="1_files/a.gif" border="0" height="1" width="1">
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="http://www.googleadservices.com/pagead/conversion/968176136/?label=iDk7CPDZ7wMQiOTUzQM&amp;guid=ON&amp;script=0"/>
+</div>
+</noscript>
+
+<div class="cc-footer-seo">
+<span><a href="http://www.codechef.com/">CodeChef</a> - A Platform for Aspiring Programmers</span>
+<p>CodeChef was created as a platform to help programmers make it big in the world of algorithms, <strong>computer programming</strong> and <strong>programming contests</strong>. At CodeChef we work hard to revive the geek in you by hosting a <strong>programming contest</strong>
+ at the start of the month and another smaller programming challenge in 
+the middle of the month. We also aim to have training sessions and 
+discussions related to <strong>algorithms, binary search</strong>, technicalities like <strong>array size</strong> and the likes. Apart from providing a platform for <strong>programming competitions</strong>, CodeChef also has various algorithm tutorials and forum discussions to help those who are new to the world of <strong>computer programming</strong>.</p>
+<p></p>
+<span><a href="http://www.codechef.com/problems/easy">Practice Section</a> - A Place to hone your 'Computer Programming Skills'</span>
+<p>Try your hand at one of our many practice problems and submit your solution in a language of your choice. Our <strong>programming contest</strong>
+ judge accepts solutions in over 35+ programming languages. Preparing 
+for coding contests were never this much fun! Receive points, and move 
+up through the CodeChef ranks. Use our practice section to better 
+prepare yourself for the multiple <strong>programming challenges</strong> that take place through-out the month on CodeChef. </p>
+<p></p>
+<span><a href="http://www.codechef.com/contests/">Compete</a> - Monthly Programming Contests and Cook-offs</span>
+<p>Here is where you can show off your <strong>computer programming</strong> skills. Take part in our 10 day long monthly <strong>coding contest</strong> and the shorter format Cook-off <strong>coding contest</strong>. Put yourself up for recognition and win great prizes. Our <strong>programming contests</strong> have prizes worth up to Rs.20,000 and $700lots more CodeChef goodies up for grabs. </p>
+<p></p>
+<span><a href="http://discuss.codechef.com/">Discuss</a></span>
+<p>Are you new to <strong>computer programming</strong>? Do you need 
+help with algorithms? Then be a part of CodeChef's Forums and interact 
+with all our programmers - they love helping out other programmers and 
+sharing their ideas. Have discussions around <strong>binary search, array size, branch-and-bound, Dijkstra's algorithm, Encryption algorithm</strong> and more by visiting the CodeChef Forums and Wiki section.</p>
+<p></p>
+<span><a href="http://www.codechef.com/community">CodeChef Community</a></span>
+<p>As part of our Educational initiative, we give institutes the 
+opportunity to associate with CodeChef in the form of Campus Chapters. 
+Hosting <strong>online programming competitions</strong> is not the only feature on CodeChef. You can also host a <strong>coding contest</strong> for your institute on CodeChef, organize an <strong>algorithm</strong> event and be a guest author on our blog. </p>
+<p></p>
+<span><a href="http://www.codechef.com/goforgold">Go For Gold</a></span>
+<p>The Go for Gold Initiative was launched about a year after CodeChef was incepted, to help prepare Indian students for the <strong>ACM ICPC</strong> World Finals competition. In the run up to the <strong>ACM ICPC</strong> competition, the Go for Gold initiative uses CodeChef as a platform to train students for the <strong>ACM ICPC</strong>
+ competition via multiple warm up contests. As an added incentive the Go
+ for Gold initiative is also offering over Rs.8 lacs to the Indian team 
+that beats the 29th position at the <strong>ACM ICPC</strong> world finals. Find out more about the Go for Gold and the <strong>ACM ICPC</strong> competition <a href="http://www.codechef.com/goforgold">here</a>.</p>
+</div>  </div>
+</div>
+<div id="block-block-48" class="block block-block block-header">
+  <div class="content">
+        <script type="text/javascript" src="1_files/jquery_003.js">  </script><script type="text/javascript" src="1_files/notification.js">  </script>  </div>
+</div>
+                        </div>
+                    </div>
+                                      <div class=" fb_reset" id="fb-root"><script async="" src="1_files/all.js"></script><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe src="1_files/xd_arbiter.html" style="border: medium none;" tab-index="-1" title="Facebook Cross Domain Communication Frame" aria-hidden="true" id="fb_xdm_frame_http" allowtransparency="true" name="fb_xdm_frame_http" frameborder="0" scrolling="no"></iframe><iframe src="1_files/xd_arbiter_002.html" style="border: medium none;" tab-index="-1" title="Facebook Cross Domain Communication Frame" aria-hidden="true" id="fb_xdm_frame_https" allowtransparency="true" name="fb_xdm_frame_https" frameborder="0" scrolling="no"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div>
+      <script type="text/javascript">
+        window.fbAsyncInit = function() {
+          FB.init({
+            appId  : '191217060453',
+            status : true, // check login status
+            cookie : true, // enable cookies to allow the server to access the session
+            xfbml  : true,
+            logging: '0',
+            channelURL: 'http://www.codechef.com/sites/all/modules/fbconnect/channel.html',
+            oauth : true
+          });
+
+          jQuery(document).trigger('fb:init');
+        };
+
+        (function() {
+          var e = document.createElement('script');
+          e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+          e.async = true;
+          document.getElementById('fb-root').appendChild(e);
+        }());
+      </script>
+<div style="display: none"><form action="/ACMKGP13/problems/EDITLIST?destination=node%2F3817729" accept-charset="UTF-8" method="post" id="fbconnect-autoconnect-form">
+<div><input name="op" id="edit-connect" value="Connect" class="form-submit" type="submit">
+<input name="form_build_id" id="form-531d3ebe8d71213969551353f8d1dd5a" value="form-531d3ebe8d71213969551353f8d1dd5a" type="hidden">
+<input name="form_token" id="edit-fbconnect-autoconnect-form-form-token" value="23b9e390f5cb38c4ce20e2bbaac82afd" type="hidden">
+<input name="form_id" id="edit-fbconnect-autoconnect-form" value="fbconnect_autoconnect_form" type="hidden">
+
+</div></form>
+</div>            </center>
+    
+
+</center><div id="lightbox2-overlay" style="display: none;"></div>      <div id="lightbox" style="display: none;" class="lightbox2-orig-layout">        <div style="background-color: rgb(238, 237, 236); color: rgb(0, 0, 0);" id="outerImageContainer"><div id="modalContainer" style="display: none; padding: 10px;"></div><div id="frameContainer" style="display: none; padding: 10px;"></div><div id="imageContainer" style="display: none; padding: 10px;"><img id="lightboxImage" alt=""><div id="hoverNav"><a style="padding-top: 10px;" id="prevLink" title="Previous" href="#"></a><a style="padding-top: 10px;" id="nextLink" title="Next" href="#"></a></div></div><div id="loading"><a href="#" id="loadingLink"></a></div></div>        <div style="background-color: rgb(238, 237, 236); color: rgb(0, 0, 0);" id="imageDataContainer" class="clearfix">          <div id="imageData"><div id="imageDetails"><span id="caption"></span><span id="numberDisplay"></span></div><div id="bottomNav"><div id="frameHoverNav"><a style="padding-top: 10px;" id="framePrevLink" title="Previous" href="#"></a><a style="padding-top: 10px;" id="frameNextLink" title="Next" href="#"></a></div><a style="background-color: rgb(238, 237, 236); color: rgb(0, 0, 0);" id="bottomNavClose" title="Close" href="#"></a><a id="bottomNavZoom" href="#"></a><a id="bottomNavZoomOut" href="#"></a><a id="lightshowPause" title="Pause Slideshow" href="#" style="display: none;"></a><a id="lightshowPlay" title="Play Slideshow" href="#" style="display: none;"></a></div></div>        </div>      </div></body></html>
