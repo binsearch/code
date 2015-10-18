@@ -23,12 +23,31 @@ typedef long long int lli;
 typedef pair<int,int> pii;
 #define vvi vector<vector<int> > 
 #define vi vector<int>
-//intializing ---- vvi res(k, vi(k,0))
-
-
 
 int main(){
+    int n;
+    cin >> n;
+    int a[110];
+    for (int i = 0; i < n; ++i)
+    {
+        cin >> a[i];
+    }
 
+    int ans = 0;
+    int mode = 0;
 
-	return 0;	
+    for(int i = 0; i < n-1; i++){
+        if(a[i] == 1){
+            if(mode == 0) mode = 1;
+        }
+        if(a[i] == 0 && a[i+1] == 0){
+            mode = 0;
+        }
+        if(mode) ans++;
+        
+    }
+    ans = ans + a[n-1];
+    cout << ans << endl;
+
+    return 0;   
 }

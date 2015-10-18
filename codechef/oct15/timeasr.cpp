@@ -24,11 +24,24 @@ typedef pair<int,int> pii;
 #define vvi vector<vector<int> > 
 #define vi vector<int>
 //intializing ---- vvi res(k, vi(k,0))
+#define rep(i,a,b) for(int i = a; i < b; i++)
 
-
+inline void inp(int &n ) {//fast input function
+    n=0;
+    int ch=getchar_unlocked(),sign=1;
+    while( ch < '0' || ch > '9' ){if(ch=='-')sign=-1; ch=getchar_unlocked();}
+    while( ch >= '0' && ch <= '9' )
+    n=(n<<3)+(n<<1)+ ch-'0', ch=getchar_unlocked();
+    n=n*sign;
+}
 
 int main(){
 
+    int t;
+    cin >> t;
+    while(t--){
+        
+    }
 
-	return 0;	
+    return 0;   
 }

@@ -23,12 +23,27 @@ typedef long long int lli;
 typedef pair<int,int> pii;
 #define vvi vector<vector<int> > 
 #define vi vector<int>
-//intializing ---- vvi res(k, vi(k,0))
-
-
 
 int main(){
+    int n;
+    cin >> n;
+    int cumm_shop[60];
+    memset(cumm_shop, 0, 60);
+    for(int i = 1; i < n; i++){
+        int t;
+        cin >> t;
+        cumm_shop[i] = t + cumm_shop[i-1];
+    }
 
+    int cumm_house[60];
+    memset(cumm_house, 0, 60);
+    for(int i = 1; i < n; i++){
+        cin >> cumm_house[i];
+    }
 
-	return 0;	
+    int aven[60];
+    for(int i = 0; i < n; i++){
+        cin >> aven[i];
+    }
+
 }
